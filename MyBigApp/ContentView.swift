@@ -10,15 +10,31 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            HStack {
+                // Image
+                Rectangle()
+                    .containerRelativeFrame(.horizontal, count: 3, span: 1, spacing: 1)
+                    .containerRelativeFrame(.vertical, count: 4, span: 1,  spacing: 1)
+                VStack{
+                    Text("Genre")
+                        .fontWeight(.semibold)
+                    
+                    Text("Science Fiction")
+                  
+                    Text("Date Started")
+                        .fontWeight(.semibold)
+
+                }
+            }
         }
-        .padding()
+        .navigationTitle("1984")
+        .toolbar {
+            
+                
+            
+        }
     }
 }
-
 #Preview {
     ContentView()
 }
