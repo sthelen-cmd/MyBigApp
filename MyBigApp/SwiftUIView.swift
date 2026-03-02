@@ -20,9 +20,10 @@ struct SwiftUIView: View {
                         .font(.largeTitle)
                     Button(action: {}) {
                         Text("Save")
+                            .padding(EdgeInsets(top: 5, leading: 15, bottom: 5, trailing: 15))
                             .foregroundStyle(.white)
                             .background(Color.blue)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .clipShape(RoundedRectangle(cornerRadius: 30))
                             
                     }
                 }
