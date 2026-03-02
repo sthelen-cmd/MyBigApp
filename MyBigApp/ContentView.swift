@@ -8,44 +8,61 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            HStack {
-                // Image
-                Rectangle()
-                    .containerRelativeFrame(.horizontal, count: 3, span: 1, spacing: 1)
-                    .containerRelativeFrame(.vertical, count: 4, span: 1,  spacing: 1)
-                VStack {
-                    Text("Genre")
-                        .fontWeight(.semibold)
-                    
-                    Text("Science Fiction")
-                        
-                    Text("Date Started")
-                        .fontWeight(.semibold)
-                    Text("April 3, 2025")
-                    
-                    Text("Date Finished")
-                        .fontWeight(.semibold)
-                    Text("April 9, 2025")
 
-                }
-            }
-        }
+    var body: some View {
+
         VStack {
-            HStack{
-                Text("Star Rating")
+
+            Spacer() // Pushes content down a bit
+
+            // MAIN CONTENT (middle-left)
+            HStack(alignment: .top, spacing: 20) {
+
+                // Rectangle
+                Rectangle()
+                    .fill(Color.black)
+                    .frame(width: 120, height: 180)
+
+                // Text
+                VStack(alignment: .leading, spacing: 20) {
+
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Genre")
+                            .fontWeight(.bold)
+
+                        Text("Science Fiction")
+                    }
+
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Date Started")
+                            .fontWeight(.bold)
+
+                        Text("April 3, 2025")
+                    }
+
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Date Finished")
+                            .fontWeight(.bold)
+
+                        Text("April 9, 2025")
+                    }
+                }
+
+                Spacer() // Keeps it left
             }
-            .containerRelativeFrame(.horizontal, count: 4, span: 1, spacing: 0)
-        }
-        .navigationTitle("1984")
-        .toolbar {
+            .padding(.horizontal)
+
+            Spacer() // Balances bottom
             
-                
-            
+
+            // Bottom text
+            Text("Star Rating")
+                .padding(.bottom, 25)
         }
     }
 }
+    
+
 #Preview {
     ContentView()
 }
